@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 
 import sys, os
-docs_italia_theme = __import__("docs-italia-theme")
+readthedocs_theme = __import__("readthedocs-theme")
 from recommonmark.transform import AutoStructify
 from recommonmark.parser import CommonMarkParser
 
 # -- PROJECT Variables ----------------------------------------------------
-settings_project_name = 'Guida a 18app per gli esercenti'
+settings_project_name = 'Guide to Qulph e-commerce System '
 settings_copyright_copyleft = 'AgID - Team Digitale'
 settings_editor_name = 'AgID - Team Digitale'
 settings_doc_version = 'version: latest'
 settings_doc_release = 'version: latest'
-settings_basename = 'guida-18app-esercenti'
-settings_file_name = 'guida-18app-esercenti'
+settings_basename = 'e-commerce-docs-qulph'
+settings_file_name = 'e-commerce-docs-qulph'
 
 # -- RTD configuration ------------------------------------------------
 
@@ -46,7 +46,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
-    'docs-italia-theme',
+    'readthedocs-theme',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -110,15 +110,15 @@ def setup(app):
 
 
 # -- Options for HTML output ----------------------------------------------
-html_theme = 'docs-italia-theme'
+html_theme = 'readthedocs-theme'
 
-html_theme_path = [docs_italia_theme.get_html_theme_path()]
+html_theme_path = [readthedocs_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    # This option can be used with docs-italia-theme to customise how the versions "badge" is shown:
+    # This option can be used with readthedocs-theme to customise how the versions "badge" is shown:
     # 'False': default (alabaster) badge | 'True': custom (italia) badge
     'custom_versions_badge': 'True',
 }
@@ -128,7 +128,7 @@ html_theme_options = {
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
-    html_theme = 'docs-italia-theme'
+    html_theme = 'readthedocs-theme'
     #html_theme_path = ["themes", ]
 else:
     # Override default css to get a larger width for ReadTheDoc build
